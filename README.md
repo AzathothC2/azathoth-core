@@ -1,4 +1,5 @@
 # Azathoth_core
+![Crates.io Version](https://img.shields.io/crates/v/azathoth-core)
 
 `azathoth_core` provides low-level, platform-specific definitions and utilities used across the [Azathoth c2 framework](https://github.com/AzathothC2/)
 
