@@ -1,7 +1,7 @@
 #![allow(non_camel_case_types)]
 
 use core::ffi::{c_char, c_void};
-use crate::platform::linux::types::{CURLCode, CURLOption, CURLPtr};
+use super::types::{CURLCode, CURLOption, CURLPtr};
 
 /// Type alias for `dlopen`-style function used to load shared libraries.
 pub type DlOpen_t = unsafe extern "C" fn(*const u8, i32) -> *mut c_void;
