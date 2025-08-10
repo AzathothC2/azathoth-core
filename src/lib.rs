@@ -63,5 +63,7 @@ pub mod errors;
 /// Os-specific types, structs, consts, and function definitions
 pub mod os;
 
-#[doc(hidden)]
-pub mod crc_table;
+mod crc_table;
+
+/// Crc32 table re-export 
+pub use crc_table::CRC32_TABLE;

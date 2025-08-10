@@ -52,3 +52,9 @@ The following structs (and related types) are included:
     * `Elf64Sym` (Symbol table entry)
     * `Elf64Phdr` (ELF64 Program header)
     * `Elf64Shdr` (ELF64 section header)
+
+
+## Changelog
+
+- 0.1.0: Initial release
+- 0.1.1: Re-exported CRC32 hashing table
