@@ -1,6 +1,6 @@
 # Azathoth_core
 ![Crates.io Version](https://img.shields.io/crates/v/azathoth-core)
-
+[README.md](README.md)
 `azathoth_core` provides low-level, platform-specific definitions and utilities used across the [Azathoth c2 framework](https://github.com/AzathothC2/)
 
 It serves a `no_std`-compatible layer, containing:
@@ -12,7 +12,7 @@ It serves a `no_std`-compatible layer, containing:
 > This project is still in active development and may change at any time!
 
 ## Installation
-* Manually, via `Cargo.toml`: `azathoth_core = "0.1.0"`
+* Manually, via `Cargo.toml`: `azathoth_core = "0.1.2"`
 * Using the `cargo` cli: `cargo add azathoth_core`
 
 
@@ -58,3 +58,4 @@ The following structs (and related types) are included:
 
 - 0.1.0: Initial release
 - 0.1.1: Re-exported CRC32 hashing table
+- 0.1.2: Added Dotnet definitions (locked behind `dotnet` feature. **Windows only**)
