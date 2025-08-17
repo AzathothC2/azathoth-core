@@ -59,3 +59,4 @@ The following structs (and related types) are included:
 - 0.1.0: Initial release
 - 0.1.1: Re-exported CRC32 hashing table
 - 0.1.2: Added Dotnet definitions (locked behind `dotnet` feature. **Windows only**)
+- 0.1.3: Made `os` modules feature-dependent. You can now use the `windows` structs on linux and vice versa

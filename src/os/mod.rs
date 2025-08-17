@@ -1,9 +1,9 @@
 /// Linux type definitions.
-#[cfg(target_os = "linux")]
+#[cfg(feature = "linux")]
 pub mod linux;
 
 /// Windows type definitions.
-#[cfg(target_os = "windows")]
+#[cfg(feature = "windows")]
 pub mod windows;
 
 
