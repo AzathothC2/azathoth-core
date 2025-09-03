@@ -31,6 +31,9 @@ pub type PIMAGE_TLS_CALLBACK = unsafe extern "system" fn(PVOID, DWORD, PVOID);
 /// Used for passing immutable C-style strings.
 pub type PCSTR = *const u8;
 
+/// A pointer to a constant wide string.
+/// Used for passing immutable C-style strings.
+pub type PCWSTR = *const u16;
 /// A generic function pointer type returned by `GetProcAddress`.
 /// Represents an exported function's entry point.
 pub type FARPROC = Option<unsafe extern "system" fn()>;
@@ -117,3 +120,7 @@ pub type VARTYPE = u16;
 /// A 16-bit unsigned integer.
 /// Used for various identifiers, sizes, or bitfields in WinAPI.
 pub type WORD = u16;
+
+
+pub type USHORT = u16;
+pub type UCHAR = u8;

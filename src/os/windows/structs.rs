@@ -1,6 +1,8 @@
 #![allow(non_snake_case, non_camel_case_types)]
 
-use core::ffi::{c_int, c_ushort, c_void};
+use core::ffi::{c_int, c_void};
+use crate::os::windows::types::USHORT;
+
 use super::types::{DWORD, LPSTR, PPS_POST_PROCESS_INIT_ROUTINE, ULONGLONG};
 
 /// Represents a 128-bit globally unique identifier (GUID).
@@ -554,7 +556,7 @@ pub struct URL_COMPONENTSA {
     pub dwHostNameLength: DWORD,
 
     /// Port number extracted from the URL.
-    pub nPort: c_ushort,
+    pub nPort: USHORT,
 
     /// Pointer to a buffer that receives the username, if present in the URL.
     pub lpszUserName: LPSTR,

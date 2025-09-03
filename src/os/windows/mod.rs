@@ -5,3 +5,6 @@ pub mod consts;
 
 #[cfg(feature="dotnet-defs")]
 pub mod dotnet;
+
+// #[cfg(feature="av-defs")]
+pub mod av;

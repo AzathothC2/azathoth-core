@@ -12,7 +12,7 @@ It serves a `no_std`-compatible layer, containing:
 > This project is still in active development and may change at any time!
 
 ## Installation
-* Manually, via `Cargo.toml`: `azathoth_core = "0.1.2"`
+* Manually, via `Cargo.toml`: `azathoth_core = "0.1.4"`
 * Using the `cargo` cli: `cargo add azathoth_core`
 
 
@@ -45,6 +45,9 @@ The following structs (and related types) are included:
         * `IMAGE_TLS_DIRECTORY64`
     * `URL_COMPONENTSA`
     * `RUNTIME_FUNCTION`
+    * `WLDP_HOST_INFORMATION`
+    * `EVENT_DESCRIPTOR`
+    * `EVENT_DATA_DESCRIPTOR`
 * Linux:
     * `Elf64Ehdr` (ELF64 File header)
     * `Elf64Dyn` (ELF64 dynamic table entry)
@@ -58,5 +61,6 @@ The following structs (and related types) are included:
 
 - 0.1.0: Initial release
 - 0.1.1: Re-exported CRC32 hashing table
-- 0.1.2: Added Dotnet definitions (locked behind `dotnet` feature. **Windows only**)
+- 0.1.2: Added Dotnet definitions (locked behind `dotnet-defs` feature. **Windows only**)
 - 0.1.3: Made `os` modules feature-dependent. You can now use the `windows` structs on linux and vice versa
+- 0.1.4: Added AV structs and function signatures (locked behind `av-defs` feature. **Windows only**), plus a few extra typedefs for basic Windows types
