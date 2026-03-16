@@ -1,4 +1,3 @@
-
 /// Load all symbols immediately (`dlopen` flag).
 pub const RTLD_NOW: i32 = 0x00002;
 
@@ -114,3 +113,11 @@ pub const SYS_EXIT_GROUP: usize = 231;
 
 /// Move the file offset to the end of the file.
 pub const SEEK_END: usize = 2;
+pub const R_X86_64_64: u32 = 1;
+pub const R_X86_64_PC32: u32 = 2;
+pub const R_X86_64_PLT32: u32 = 4;
+pub const R_X86_64_32: u32 = 10;
+pub const R_X86_64_32S: u32 = 11;
+pub const R_AARCH64_CALL26: u32 = 283;
+pub const R_AARCH64_ADR_PREL_PG_HI21: u32 = 275;
+pub const R_AARCH64_ADD_ABS_LO12_NC: u32 = 277;

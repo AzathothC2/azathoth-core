@@ -258,3 +258,7 @@ pub type RtlCompareMemory_t = unsafe extern "system" fn(source1: *const c_void, 
 /// Windows LdrpHandleTlsData typedef: \
 /// Undocumented
 pub type LdrpHandleTlsData_t = unsafe extern "system" fn(entry: *mut LDR_DATA_TABLE_ENTRY);
+
+/// Windows VirtualLock typedef: \
+/// <https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtuallock>
+pub type VirtualLock_t = unsafe extern "system" fn(lpaddress: LPVOID, size: usize) -> BOOL;

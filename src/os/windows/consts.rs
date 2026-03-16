@@ -34,6 +34,9 @@ pub const PAGE_READONLY: u32 = 0x02;
 /// Memory protection: Read/write access.
 pub const PAGE_READWRITE: u32 = 0x04;
 
+/// Memory protection: No-access
+pub const PAGE_NOACCESS: u32 = 0x01;
+
 /// Memory protection: Write-copy access.
 pub const PAGE_WRITECOPY: u32 = 0x08;
 
@@ -54,7 +57,8 @@ pub const MEM_COMMIT: u32 = 0x00001000;
 
 /// Memory allocation flag: Reserve memory pages.
 pub const MEM_RESERVE: u32 = 0x00002000;
-
+/// Memory allocation flag: Release memory pages
+pub const MEM_RELEASE: u32 = 0x00008000;
 /// Relocation type: 64-bit address relocation.
 pub const IMAGE_REL_BASED_DIR64: u16 = 10;
 
@@ -105,3 +109,17 @@ pub const HTTP_QUERY_CONTENT_LENGTH: u32 = 5;
 
 /// InternetCrackUrlA decode flag: Decode percent-encoded characters.
 pub const ICU_DECODE: u32 = 0x10000000;
+
+pub const IMAGE_SCN_CNT_CODE: u32              = 0x00000020;
+pub const IMAGE_SCN_CNT_INITIALIZED_DATA: u32  = 0x00000040;
+pub const IMAGE_SCN_CNT_UNINITIALIZED_DATA: u32 = 0x00000080;
+pub const IMAGE_REL_AMD64_ADDR64: u16  = 0x0001;
+pub const IMAGE_REL_AMD64_ADDR32NB: u16 = 0x0003;
+pub const IMAGE_REL_AMD64_REL32: u16   = 0x0004;
+pub const IMAGE_REL_AMD64_REL32_1: u16 = 0x0005;
+pub const IMAGE_REL_AMD64_REL32_2: u16 = 0x0006;
+pub const IMAGE_REL_AMD64_REL32_3: u16 = 0x0007;
+pub const IMAGE_REL_AMD64_REL32_4: u16 = 0x0008;
+pub const IMAGE_REL_AMD64_REL32_5: u16 = 0x0009;
+pub const IMAGE_REL_I386_DIR32: u16  = 0x0006;
+pub const IMAGE_REL_I386_REL32: u16  = 0x0014;
