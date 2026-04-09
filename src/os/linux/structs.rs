@@ -62,8 +62,14 @@ pub struct Elf64Rela {
     pub r_info: u64,
 }
 
+impl Elf64Rela {
+    pub fn typ(&self) -> u32 {
+        (self.r_info & 0xFFFFFFFF) as u32
+    }
+}
+
 /// Represents an ELF64 symbol table entry.
-///
+///_6
 /// Used to store symbol information such as function and variable names and addresses.
 #[repr(C)]
 #[derive(Debug)]

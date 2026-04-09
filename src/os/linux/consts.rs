@@ -111,6 +111,8 @@ pub const SYS_EXIT: usize = 60;
 /// Linux syscall number for `exit_group` (terminate all threads).
 pub const SYS_EXIT_GROUP: usize = 231;
 
+/// Linux syscall number for `mprotect`
+pub const SYS_MPROTECT: usize = 10;
 /// Move the file offset to the end of the file.
 pub const SEEK_END: usize = 2;
 pub const R_X86_64_64: u32 = 1;
