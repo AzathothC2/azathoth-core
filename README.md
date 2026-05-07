@@ -12,7 +12,7 @@ It serves a `no_std`-compatible layer, containing:
 > This project is still in active development and may change at any time!
 
 ## Installation
-* Manually, via `Cargo.toml`: `azathoth_core = "0.1.4"`
+* Manually, via `Cargo.toml`: `azathoth_core = "0.1.7"`
 * Using the `cargo` cli: `cargo add azathoth_core`
 
 
