@@ -58,3 +58,19 @@ pub struct LargeInteger {
     pub low: u32,
     pub high: i32,
 }
+
+
+#[repr(C)]
+pub struct ClientId {
+    pub unique_process: usize,
+    pub unique_thread: usize,
+}
+
+impl ClientId {
+    pub fn for_pid(pid: u32) -> Self {
+        Self {
+            unique_process: pid as usize,
+            unique_thread: 0,
+        }
+    }
+}
