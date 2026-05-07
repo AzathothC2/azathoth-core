@@ -14,22 +14,22 @@ use crate::os::windows::types::{LONG, VARTYPE, WORD};
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union VariantData {
-    llVal: i64,
-    lVal: LONG,
-    bVal: u8,
-    iVal: i16,
-    fltVal: f32,
-    dblVal: f64,
-    boolVal: i16,
-    scode: i32,
-    cyVal: i64,
-    date: f64,
-    bstrVal: *mut u16,
-    punkVal: *mut c_void,
-    pdispVal: *mut c_void,
+    pub llVal: i64,
+    pub lVal: LONG,
+    pub bVal: u8,
+    pub iVal: i16,
+    pub fltVal: f32,
+    pub dblVal: f64,
+    pub boolVal: i16,
+    pub scode: i32,
+    pub cyVal: i64,
+    pub date: f64,
+    pub bstrVal: *mut u16,
+    pub punkVal: *mut c_void,
+    pub pdispVal: *mut c_void,
     /// Pointer to a [`SAFEARRAY`] value, used for storing array data in a VARIANT.
     pub parray: *mut SAFEARRAY,
-    byref: *mut c_void,
+    pub byref: *mut c_void,
 }
 
 
@@ -72,11 +72,11 @@ pub struct SAFEARRAYBOUND {
 /// Windows API helper functions (e.g., `SafeArrayCreate`, `SafeArrayAccessData`).
 #[repr(C)]
 pub struct SAFEARRAY {
-    cDims: u16,
-    fFeatures: u16,
-    cbElements: u32,
-    cLocks: u32,
-    pvData: *mut u8,
-    rgsabound: [SAFEARRAYBOUND; 1],
+    pub cDims: u16,
+    pub fFeatures: u16,
+    pub cbElements: u32,
+    pub cLocks: u32,
+    pub pvData: *mut u8,
+    pub rgsabound: [SAFEARRAYBOUND; 1],
 }
 

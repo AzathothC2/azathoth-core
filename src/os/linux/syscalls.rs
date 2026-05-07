@@ -1,3 +1,18 @@
+
+/// Performs a raw system call without arguments.
+#[inline(always)]
+#[unsafe(link_section = ".text")]
+pub fn syscall0(n: usize) -> isize {
+    let ret: isize;
+    unsafe {
+        core::arch::asm!(
+        "syscall",
+        inout("rax") n => ret,
+        )
+    }
+    ret
+}
+
 /// Performs a raw system call with 1 argument.
 ///
 /// This function directly invokes the Linux `syscall` instruction with the

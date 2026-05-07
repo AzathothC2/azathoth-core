@@ -4,12 +4,15 @@ use core::ffi::c_void;
 use super::structs::{SAFEARRAY, SAFEARRAYBOUND};
 use crate::os::windows::types::{BSTR, DWORD, HRESULT, LPVOID, REFCLSID, REFIID};
 
-/// Windows CLRCreateInstance typedef: \
+/// Windows CLRCreateInstance typedef:
 /// <https://learn.microsoft.com/en-us/dotnet/core/unmanaged-api/debugging/clrcreateinstance-function>
-pub type CLRCreateInstance_t =
-unsafe extern "system" fn(clsid: REFCLSID, riid: REFIID, ppInterface: *mut LPVOID) -> HRESULT;
+pub type CLRCreateInstance_t = unsafe extern "system" fn(
+    clsid: REFCLSID,
+    riid: REFIID,
+    ppInterface: *mut LPVOID,
+) -> HRESULT;
 
-/// Windows CorBindToRuntime typedef: \
+/// Windows CorBindToRuntime typedef:
 /// <https://learn.microsoft.com/en-us/dotnet/framework/unmanaged-api/hosting/corbindtoruntime-function>
 pub type CorBindToRuntime_t = unsafe extern "system" fn(
     pwszVersion: *const u16,
@@ -19,7 +22,7 @@ pub type CorBindToRuntime_t = unsafe extern "system" fn(
     ppv: *mut LPVOID,
 ) -> HRESULT;
 
-/// Windows CoCreateInstance typedef: \
+/// Windows CoCreateInstance typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance>
 pub type CoCreateInstance_t = unsafe extern "system" fn(
     rclsid: *const REFCLSID,
@@ -29,24 +32,23 @@ pub type CoCreateInstance_t = unsafe extern "system" fn(
     ppv: *mut *mut c_void,
 ) -> HRESULT;
 
-/// Windows CoInitializeEx typedef: \
+/// Windows CoInitializeEx typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex>
-pub type CoInitializeEx_t =
-unsafe extern "system" fn(pvReserved: LPVOID, dwCoInit: DWORD) -> HRESULT;
+pub type CoInitializeEx_t = unsafe extern "system" fn(pvReserved: LPVOID, dwCoInit: DWORD) -> HRESULT;
 
-/// Windows CoUninitialize typedef: \
+/// Windows CoUninitialize typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-couninitialize>
 pub type CoUninitialize_t = unsafe extern "system" fn();
 
-/// Windows SysAllocString typedef: \
+/// Windows SysAllocString typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-sysallocstring>
 pub type SysAllocString_t = unsafe extern "system" fn(psz: *const u16) -> BSTR;
 
-/// Windows SysFreeString typedef: \
+/// Windows SysFreeString typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-sysfreestring>
 pub type SysFreeString_t = unsafe extern "system" fn(bstr: BSTR);
 
-/// Windows SafeArrayCreate typedef: \
+/// Windows SafeArrayCreate typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearraycreate>
 pub type SafeArrayCreate_t = unsafe extern "system" fn(
     vt: u16,
@@ -54,16 +56,19 @@ pub type SafeArrayCreate_t = unsafe extern "system" fn(
     rgsabound: *const SAFEARRAYBOUND,
 ) -> *mut SAFEARRAY;
 
-/// Windows SafeArrayDestroy typedef: \
+/// Windows SafeArrayDestroy typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearraydestroy>
 pub type SafeArrayDestroy_t = unsafe extern "system" fn(psa: *mut SAFEARRAY) -> HRESULT;
 
-/// Windows SafeArrayCreateVector typedef: \
+/// Windows SafeArrayCreateVector typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearraycreatevector>
-pub type SafeArrayCreateVector_t =
-unsafe extern "system" fn(vt: u16, lLbound: i32, cElements: u32) -> *mut SAFEARRAY;
+pub type SafeArrayCreateVector_t = unsafe extern "system" fn(
+    vt: u16,
+    lLbound: i32,
+    cElements: u32,
+) -> *mut SAFEARRAY;
 
-/// Windows SafeArrayPutElement typedef: \
+/// Windows SafeArrayPutElement typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearrayputelement>
 pub type SafeArrayPutElement_t = unsafe extern "system" fn(
     psa: *mut SAFEARRAY,
@@ -71,26 +76,34 @@ pub type SafeArrayPutElement_t = unsafe extern "system" fn(
     pv: *const c_void,
 ) -> HRESULT;
 
-/// Windows SafeArrayGetLBound typedef: \
+/// Windows SafeArrayGetLBound typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearraygetlbound>
-pub type SafeArrayGetLBound_t =
-unsafe extern "system" fn(psa: *mut SAFEARRAY, nDim: u32, plLbound: *mut i32) -> HRESULT;
+pub type SafeArrayGetLBound_t = unsafe extern "system" fn(
+    psa: *mut SAFEARRAY,
+    nDim: u32,
+    plLbound: *mut i32,
+) -> HRESULT;
 
-/// Windows SafeArrayGetUBound typedef: \
+/// Windows SafeArrayGetUBound typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearraygetubound>
-pub type SafeArrayGetUBound_t =
-unsafe extern "system" fn(psa: *mut SAFEARRAY, nDim: u32, plUbound: *mut i32) -> HRESULT;
+pub type SafeArrayGetUBound_t = unsafe extern "system" fn(
+    psa: *mut SAFEARRAY,
+    nDim: u32,
+    plUbound: *mut i32,
+) -> HRESULT;
 
-/// Windows SafeArrayAccessData typedef: \
+/// Windows SafeArrayAccessData typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearrayaccessdata>
-pub type SafeArrayAccessData_t =
-unsafe extern "system" fn(psa: *mut SAFEARRAY, ppvData: *mut *mut c_void) -> HRESULT;
+pub type SafeArrayAccessData_t = unsafe extern "system" fn(
+    psa: *mut SAFEARRAY,
+    ppvData: *mut *mut c_void,
+) -> HRESULT;
 
-/// Windows SafeArrayUnAccessData typedef: \
+/// Windows SafeArrayUnAccessData typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearrayunaccessdata>
 pub type SafeArrayUnAccessData_t = unsafe extern "system" fn(psa: *mut SAFEARRAY) -> HRESULT;
 
-/// Windows SafeArrayGetElement typedef: \
+/// Windows SafeArrayGetElement typedef:
 /// <https://learn.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-safearraygetelement>
 pub type SafeArrayGetElement_t = unsafe extern "system" fn(
     psa: *mut SAFEARRAY,
@@ -98,7 +111,10 @@ pub type SafeArrayGetElement_t = unsafe extern "system" fn(
     pv: *mut c_void,
 ) -> HRESULT;
 
-/// Windows CreateInterface typedef: \
+/// Windows CLRCreateInstance (CreateInterface) typedef:
 /// <https://learn.microsoft.com/en-us/dotnet/framework/unmanaged-api/hosting/clrcreateinstance-function>
-pub type CreateInterface_t =
-unsafe extern "system" fn(clsid: REFCLSID, iid: REFIID, interface: *mut *mut c_void) -> HRESULT;
+pub type CreateInterface_t = unsafe extern "system" fn(
+    clsid: REFCLSID,
+    iid: REFIID,
+    interface: *mut *mut c_void,
+) -> HRESULT;

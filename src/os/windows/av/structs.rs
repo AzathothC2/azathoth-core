@@ -15,13 +15,13 @@ pub struct WLDP_HOST_INFORMATION {
 #[repr(C)]
 #[derive(Debug)]
 pub struct EVENT_DESCRIPTOR {
-    Id: USHORT,
-    Version: UCHAR,
-    Channel: UCHAR,
-    Level: UCHAR,
-    Opcode: UCHAR,
-    Task: USHORT,
-    Keyword: ULONGLONG
+    pub Id: USHORT,
+    pub Version: UCHAR,
+    pub Channel: UCHAR,
+    pub Level: UCHAR,
+    pub Opcode: UCHAR,
+    pub Task: USHORT,
+    pub Keyword: ULONGLONG
 }
 
 #[repr(C)]

@@ -1,7 +1,7 @@
 #![allow(non_camel_case_types)]
 
 use core::ffi::c_void;
-use super::structs::Guid;
+use super::peb::structs::Guid;
 
 /// A generic handle to an object (e.g., file, process, thread, or resource).
 /// Typically returned by many WinAPI functions and used as an opaque pointer.
